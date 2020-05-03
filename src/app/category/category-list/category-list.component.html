@@ -1,0 +1,17 @@
+<table class="table ">
+    <tbody>
+      <tr *ngFor="let category of categories; let i = index">
+        <td>
+          <span class="badge badge-pill badge-primary"  *ngIf="!category.active">Deactive</span>
+          <span class="badge badge-pill badge-success"  *ngIf="category.active">Active</span>
+        </td>
+        <td>{{category.name}}</td>
+        <td>
+          <button class="button btn-success" *ngIf='!category.active' (click)='updateActive(category,true)'>Activate</button>
+          <button class="button btn-primary" *ngIf='category.active' (click)='updateActive(category, false)'>Deactivate</button>
+         
+          <!-- <button class="button  btn-danger" (click)='deletecategory(category)'>Delete</button> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>

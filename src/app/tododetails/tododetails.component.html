@@ -1,0 +1,16 @@
+  <table class="table ">
+    <tbody>
+      <tr *ngFor="let todo of todos; let i = index">
+          <td *ngIf="todo.active">
+            <span class="badge  badge-primary">Closed</span>
+          </td>
+        <td>{{todo.name}}</td>
+        <td>
+          <button class="button  btn-primary" *ngIf='todo.active' (click)='updateActive(todo,false)'>Done</button>
+   
+         
+          <button class="button  btn-danger" (click)='deletetodo(todo)'>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

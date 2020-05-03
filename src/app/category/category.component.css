@@ -1,0 +1,41 @@
+.page-title-holder {
+    border-bottom: 1px solid #e5e5e5;
+}
+.page-title-holder .page-title {
+    margin: 16px 0;
+    font-size: 1.75em;
+    font-weight: 600;
+    color: #2e2e2e;
+}
+
+.top-head {
+        border-bottom: 1px solid #e5e5e5;
+        display: flex;
+    }
+    .top-head .top-list {
+        border-bottom: 0;
+        flex: 1;
+        display: flex;
+    }
+    .top-head .top-list li {
+        display: flex;
+    }
+    a {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 28px;
+    color: #707070;
+    padding: 8px;
+    padding-bottom: 9px;
+    font-size: 14px;
+    line-height: 28px;
+    color: #707070;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    }
+   a.active{
+        border-bottom: 2px solid #6666c4;
+        color: #000;
+        font-weight: 600;
+    }

@@ -1,0 +1,33 @@
+<div class="page-title-holder">
+    <h1 class="page-title">To-Do List</h1>
+    </div>
+<div class="top-head">
+    <ul class="top-list p-0">
+      <li>
+          <a  routerLink="undone" routerLinkActive="active">To Do
+            <span class="badge badge-light">
+                {{notdoneCount}}
+                </span>
+          </a>
+      </li>
+      <li>
+        <a routerLink="done" routerLinkActive="active">Done
+            <span class="badge badge-light">
+            {{doneCount}}
+            </span>
+        </a>
+    </li>
+    <li>
+        <a routerLink="all" routerLinkActive="active">All
+            <span class="badge badge-light">
+                {{allCount}}
+                </span>
+        </a>
+    </li>
+    <li>
+        <a routerLink="add" routerLinkActive="active">Add Todo</a>
+    </li>
+    </ul>
+
+</div>
+<router-outlet></router-outlet>
