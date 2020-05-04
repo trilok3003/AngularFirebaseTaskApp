@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-sub-category',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sub-category.component.css']
 })
 export class SubCategoryComponent implements OnInit {
-
-  constructor() { }
+  totalCategory: number
+  constructor(public todoService: TodoService) { }
 
   ngOnInit() {
-  }
+    this.todoService.getTotalSubCategoryCount().subscribe(res => {
+      this.totalCategory = res.docs.length
+     })
 
+    }
 }

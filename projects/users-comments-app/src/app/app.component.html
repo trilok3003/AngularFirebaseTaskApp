@@ -1,0 +1,18 @@
+
+<div class="container mt-2">
+    <button class="button btn-success" (click)="db.seedComments()">Seed Me</button>
+<button class="button btn-info ml-2" (click)="db.commentAggregation()">Run Aggregation</button>
+
+
+<button class="button btn-primary ml-2" (click)="db.set('test', { content: 'hello world' })">Set with Aggregation</button>
+<hr>
+
+<h1>Users Threaded Comments nested level</h1>
+
+
+<app-comment *ngFor="let comment of comments | async" 
+             [commentId]="comment.id">
+</app-comment>
+
+
+</div>

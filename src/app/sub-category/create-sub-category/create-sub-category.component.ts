@@ -27,7 +27,7 @@ export class CreateSubCategoryComponent implements OnInit {
       })
     });
   }
-  
+
  
   newSubCategory() {
     this.submitted = false;

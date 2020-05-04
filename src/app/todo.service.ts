@@ -101,4 +101,7 @@ getSubCategoryList() {
 updateSubCategory(key: any, value: any) {
   this.firestore.doc('subcategories/' + key).update(value);
 }
+getTotalSubCategoryCount() {
+  return this.firestore.collection("subcategories").get();
+}
 }
