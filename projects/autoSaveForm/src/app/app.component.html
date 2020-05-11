@@ -1,0 +1,76 @@
+<div class="container mt-2">
+
+  <div *ngIf="state === 'synced'" class="alert alert-success">
+    Form is synced with Firestore
+  </div>
+  
+  <div *ngIf="state === 'modified'" class="alert alert-warning">
+    Form has unsaved changes
+  </div>
+  <!-- Getting an ERROR Error: ExpressionChangedAfterItHasBeenCheckedError -->
+  <!-- <div *ngIf="state === 'loading'" class="notification is-info">
+    Form data is preloading
+  </div> -->
+  <div *ngIf="state === 'error'" class="alert alert-danger">
+    Form tried and failed to save to Firestore
+  </div> 
+  <!-- </div> -->
+  
+  <hr>
+  
+  
+  
+  
+  
+  
+  
+  
+  <form [formGroup]="myForm" fireForm path="contacts/test" (stateChange)="changeHandler($event)">
+  
+    <div class="columns">
+        <div class="column">
+            <h3>Reactive Form Data</h3><br> {{ myForm.value | json }}
+        </div>
+  
+        <div class="column">
+  
+            <h3>Firestore Data</h3><br> {{ myDoc | async | json }}
+        </div>
+  
+  
+    </div>
+  
+  
+  
+  
+  
+    <hr>
+  
+    <div class="form-group">
+        <input class="form-control" placeholder="email" formControlName="email">
+    </div>
+  
+    <div class="form-group">
+        <select formControlName="career" placeholder="career" class="form-control">
+            <option value="Doctor">Doctor</option>
+            <option value="SoftwareEngineer">Software Engineer</option>
+            <option value="policeConstable">Police Constable</option>
+        </select>
+      </div>
+    <br>
+  
+    <div class="form-group">
+        <textarea  placeholder="your bio" formControlName="bio"></textarea>
+    </div>
+  
+  
+  
+  
+    <hr> Fireform state: {{ state }} <br>
+    <hr>
+  
+    <button class="btn btn-primary" [disabled]="myForm.invalid || state !== 'modified'">Save</button>
+  
+  
+  </form>
+</div>

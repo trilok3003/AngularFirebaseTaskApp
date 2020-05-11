@@ -233,6 +233,596 @@
           }
         }
       }
+    },
+    "chatApp": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/chatApp",
+      "sourceRoot": "projects/chatApp/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/chatApp",
+            "index": "projects/chatApp/src/index.html",
+            "main": "projects/chatApp/src/main.ts",
+            "polyfills": "projects/chatApp/src/polyfills.ts",
+            "tsConfig": "projects/chatApp/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/chatApp/src/favicon.ico",
+              "projects/chatApp/src/assets"
+            ],
+            "styles": [
+              "projects/chatApp/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/chatApp/src/environments/environment.ts",
+                  "with": "projects/chatApp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "chatApp:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "chatApp:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "chatApp:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/chatApp/src/test.ts",
+            "polyfills": "projects/chatApp/src/polyfills.ts",
+            "tsConfig": "projects/chatApp/tsconfig.spec.json",
+            "karmaConfig": "projects/chatApp/karma.conf.js",
+            "assets": [
+              "projects/chatApp/src/favicon.ico",
+              "projects/chatApp/src/assets"
+            ],
+            "styles": [
+              "projects/chatApp/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/chatApp/tsconfig.app.json",
+              "projects/chatApp/tsconfig.spec.json",
+              "projects/chatApp/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/chatApp/e2e/protractor.conf.js",
+            "devServerTarget": "chatApp:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "chatApp:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "weatherApp": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/weatherApp",
+      "sourceRoot": "projects/weatherApp/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/weatherApp",
+            "index": "projects/weatherApp/src/index.html",
+            "main": "projects/weatherApp/src/main.ts",
+            "polyfills": "projects/weatherApp/src/polyfills.ts",
+            "tsConfig": "projects/weatherApp/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/weatherApp/src/favicon.ico",
+              "projects/weatherApp/src/assets"
+            ],
+            "styles": [
+              "projects/weatherApp/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/weatherApp/src/environments/environment.ts",
+                  "with": "projects/weatherApp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "weatherApp:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "weatherApp:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "weatherApp:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/weatherApp/src/test.ts",
+            "polyfills": "projects/weatherApp/src/polyfills.ts",
+            "tsConfig": "projects/weatherApp/tsconfig.spec.json",
+            "karmaConfig": "projects/weatherApp/karma.conf.js",
+            "assets": [
+              "projects/weatherApp/src/favicon.ico",
+              "projects/weatherApp/src/assets"
+            ],
+            "styles": [
+              "projects/weatherApp/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/weatherApp/tsconfig.app.json",
+              "projects/weatherApp/tsconfig.spec.json",
+              "projects/weatherApp/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/weatherApp/e2e/protractor.conf.js",
+            "devServerTarget": "weatherApp:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "weatherApp:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "twitterApp": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/twitterApp",
+      "sourceRoot": "projects/twitterApp/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/twitterApp",
+            "index": "projects/twitterApp/src/index.html",
+            "main": "projects/twitterApp/src/main.ts",
+            "polyfills": "projects/twitterApp/src/polyfills.ts",
+            "tsConfig": "projects/twitterApp/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/twitterApp/src/favicon.ico",
+              "projects/twitterApp/src/assets"
+            ],
+            "styles": [
+              "projects/twitterApp/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/twitterApp/src/environments/environment.ts",
+                  "with": "projects/twitterApp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "twitterApp:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "twitterApp:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "twitterApp:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/twitterApp/src/test.ts",
+            "polyfills": "projects/twitterApp/src/polyfills.ts",
+            "tsConfig": "projects/twitterApp/tsconfig.spec.json",
+            "karmaConfig": "projects/twitterApp/karma.conf.js",
+            "assets": [
+              "projects/twitterApp/src/favicon.ico",
+              "projects/twitterApp/src/assets"
+            ],
+            "styles": [
+              "projects/twitterApp/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/twitterApp/tsconfig.app.json",
+              "projects/twitterApp/tsconfig.spec.json",
+              "projects/twitterApp/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/twitterApp/e2e/protractor.conf.js",
+            "devServerTarget": "twitterApp:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "twitterApp:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "facebookApp": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/facebookApp",
+      "sourceRoot": "projects/facebookApp/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/facebookApp",
+            "index": "projects/facebookApp/src/index.html",
+            "main": "projects/facebookApp/src/main.ts",
+            "polyfills": "projects/facebookApp/src/polyfills.ts",
+            "tsConfig": "projects/facebookApp/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/facebookApp/src/favicon.ico",
+              "projects/facebookApp/src/assets"
+            ],
+            "styles": [
+              "projects/facebookApp/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/facebookApp/src/environments/environment.ts",
+                  "with": "projects/facebookApp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "facebookApp:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "facebookApp:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "facebookApp:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/facebookApp/src/test.ts",
+            "polyfills": "projects/facebookApp/src/polyfills.ts",
+            "tsConfig": "projects/facebookApp/tsconfig.spec.json",
+            "karmaConfig": "projects/facebookApp/karma.conf.js",
+            "assets": [
+              "projects/facebookApp/src/favicon.ico",
+              "projects/facebookApp/src/assets"
+            ],
+            "styles": [
+              "projects/facebookApp/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/facebookApp/tsconfig.app.json",
+              "projects/facebookApp/tsconfig.spec.json",
+              "projects/facebookApp/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/facebookApp/e2e/protractor.conf.js",
+            "devServerTarget": "facebookApp:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "facebookApp:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "autoSaveForm": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/autoSaveForm",
+      "sourceRoot": "projects/autoSaveForm/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/autoSaveForm",
+            "index": "projects/autoSaveForm/src/index.html",
+            "main": "projects/autoSaveForm/src/main.ts",
+            "polyfills": "projects/autoSaveForm/src/polyfills.ts",
+            "tsConfig": "projects/autoSaveForm/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/autoSaveForm/src/favicon.ico",
+              "projects/autoSaveForm/src/assets"
+            ],
+            "styles": [
+              "projects/autoSaveForm/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/autoSaveForm/src/environments/environment.ts",
+                  "with": "projects/autoSaveForm/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "autoSaveForm:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "autoSaveForm:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "autoSaveForm:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/autoSaveForm/src/test.ts",
+            "polyfills": "projects/autoSaveForm/src/polyfills.ts",
+            "tsConfig": "projects/autoSaveForm/tsconfig.spec.json",
+            "karmaConfig": "projects/autoSaveForm/karma.conf.js",
+            "assets": [
+              "projects/autoSaveForm/src/favicon.ico",
+              "projects/autoSaveForm/src/assets"
+            ],
+            "styles": [
+              "projects/autoSaveForm/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/autoSaveForm/tsconfig.app.json",
+              "projects/autoSaveForm/tsconfig.spec.json",
+              "projects/autoSaveForm/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/autoSaveForm/e2e/protractor.conf.js",
+            "devServerTarget": "autoSaveForm:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "autoSaveForm:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "AngularFirebaseTodo"
 }

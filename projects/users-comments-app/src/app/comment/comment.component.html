@@ -1,7 +1,7 @@
 <div *ngIf="comment | async as c" class="card p-2">
   <h4>{{c.user}}</h4>
    <p> {{ c.text }}</p>
-  <p class="text-info">{{c.createdAt | date}}</p>
+  <p class="text-info">{{c.createdAt | date: 'medium'}}</p>
     <div *ngIf="c.kids" class="card-body">
 
       <app-comment *ngFor="let kid of c.kids" 
