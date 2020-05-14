@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="col-md-12">
+    <div *ngIf="post$ | async as post">
+
+      <h1>{{ post.title }}</h1>
+
+      <p>{{ post.content }}</p>
+
+      <p class="tag is-dark">Last Comment: {{ post.lastActivity }}</p><br>
+      <p class="tag is-info">Total Comments: {{ post.commentCount }}</p>
+
+      <h3>Add your Comment</h3>
+      <hr>
+
+      <input [(ngModel)]="formValue" (keyup.enter)="addComment()" class="input">
+
+
+      <h3>Recent Comments</h3>
+      <hr>
+
+      <!-- Aggregate comments on the document -->
+      <ng-container *ngIf="!comments$">
+        <div *ngFor="let comment of post.recentComments; let i = index" class="notification">
+          <h4>#{{ i+1 }}</h4>
+          <p>{{ comment.content }}</p>
+          <em>posted {{ comment.createdAt }}</em>
+          <hr>
+        </div>
+      </ng-container>
+
+      <!-- Realtime comments from the collection -->
+      <div *ngFor="let comment of comments$ | async" class="alert">
+        <p>{{ comment.content }}</p>
+        <em>posted {{ comment.createdAt }}</em>
+        <hr>
+      </div>
+
+
+      <ng-container *ngIf="comments$"></ng-container>
+
+
+      <button class="button is-primary" (click)="loadMore()">
+        Load all {{ post.commentCount }} comments
+      </button>
+
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  <div class="column is-2"></div>
+</div>

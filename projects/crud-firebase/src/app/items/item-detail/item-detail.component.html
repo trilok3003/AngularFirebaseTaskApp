@@ -1,0 +1,32 @@
+<!-- <h5>{{ item.title || 'missing title' }}</h5>
+Active: {{ item.active }}
+{{ item.timeStamp  }} 
+
+<span (click)='updateTimeStamp()'>Update Timestamp</span>
+<span *ngIf='item.active' (click)='updateActive(false)'>Mark Complete</span>
+<span *ngIf='!item.active' (click)='updateActive(true)'>Mark Active</span>
+<span (click)='deleteItem()'>Delete</span> -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Active</th>
+            <th>Update Timestamp</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ item.title || 'missing title' }}</td>
+            <td>{{ item.active }}</td>
+            <td>
+      <button (click)='updateTimeStamp()' class="btn btn-info">Update Timestamp</button>
+            </td>
+            <td>
+              <button *ngIf='item.active' (click)='updateActive(false)' class="btn btn-success">Mark Complete</button>
+              <button *ngIf='!item.active' (click)='updateActive(true)' class="btn btn-primary">Mark Active</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+   
