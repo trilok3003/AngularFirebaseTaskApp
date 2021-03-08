@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
     this.postRef = this.afs.doc('posts/testPost')
     this.commentsRef = this.postRef.collection('comments', ref => ref.orderBy('createdAt', 'desc') )
     this.post$ = this.postRef.valueChanges();
+    console.log(this.post$);
   }
 
   addComment() {
