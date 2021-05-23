@@ -13,17 +13,22 @@ export class AppComponent {
   select = 'categories';
   constructor(public router: Router, public todoService: TodoService) {
   }
+  // onChange(e) {
+  //   if(e) {
+  //     if( this.select === 'todos') {
+  //       this.router.navigate(['todos']);
+  //   }
+  //   if( this.select === 'categories') {
+  //     this.router.navigate(['categories']);
+  // }
+  //   else {
+  //     this.router.navigate(['subCategories'])
+  //   }
+  // }
+  //   }  
   onChange(e) {
     if(e) {
-      if( this.select === 'todos') {
-        this.router.navigate(['todos']);
-    }
-    if( this.select === 'categories') {
-      this.router.navigate(['categories']);
-  }
-    else {
-      this.router.navigate(['subCategories'])
-    }
-  }
-    }  
+      this.router.navigate([this.select]);
+     }
+    } 
 }

@@ -11,8 +11,7 @@ import {
 import { FormControl, FormGroup } from '@angular/forms';
 import { tap, map, take, debounceTime } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFirestoreDocument } from '@angular/fire/database';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 
 @Directive({

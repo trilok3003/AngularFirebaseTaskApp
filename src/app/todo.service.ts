@@ -28,15 +28,15 @@ export class TodoService {
     this.firestore.doc('todos/' + key).update(value);
   }
  
-  getTodosList() {
+  getTodosList(): Observable<any> {
     return this.firestore.collection('todos').snapshotChanges();
   }
-  getTodosDoneList() {
+  getTodosDoneList(): Observable<any> {
     return this.firestore.collection('todos', ref => {
       return ref.where('active', '==', false)
     }).snapshotChanges();
   }
-  getTodosNotDoneList() {
+  getTodosNotDoneList(): Observable<any> {
     return this.firestore.collection('todos', ref => {
       return ref.where('active', '==', true)
     }).snapshotChanges();
@@ -61,15 +61,15 @@ updateCategory(key: any, value: any) {
   this.firestore.doc('categories/' + key).update(value);
 }
 
-getCategoryList() {
+getCategoryList(): Observable<any> {
   return this.firestore.collection('categories').snapshotChanges();
 }
-getCategoryDoneList() {
+getCategoryDoneList(): Observable<any> {
   return this.firestore.collection('categories', ref => {
     return ref.where('active', '==', false)
   }).snapshotChanges();
 }
-getCategoryNotDoneList() {
+getCategoryNotDoneList(): Observable<any> {
   return this.firestore.collection('categories', ref => {
     return ref.where('active', '==', true)
   }).snapshotChanges();
@@ -95,7 +95,7 @@ getTodoAllCount() {
   createSubCategory(category: SubCategory) {
     return this.firestore.collection('subcategories').add({...category});
 }
-getSubCategoryList() {
+getSubCategoryList(): Observable<any> {
   return this.firestore.collection('subcategories').snapshotChanges();
 }
 updateSubCategory(key: any, value: any) {
